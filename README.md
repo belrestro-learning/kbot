@@ -1,7 +1,8 @@
 # Kbot demo telegram bot
 
-## install
+This repo is for managing simple telegram bot on go `t.me/belrestro_learing_bot`
 
+## install
 
 ```bash
 go get
@@ -34,5 +35,12 @@ go build -ldflags "-X=kbot/cmd.appVersion=1.0.1" -o bin/kbot
 to run the bot use
 
 ```bash
-./bin/kbot
+./bin/kbot start
+```
+
+## commands
+
+```
+/greet - greet the user
+/finish - farewells the user
 ```

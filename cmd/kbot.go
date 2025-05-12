@@ -46,17 +46,19 @@ to quickly create a Cobra application.`,
 			return
 		}
 
-		kbot.Handle(telebot.OnText, func(ctx telebot.Context) error {
-		    var text = ctx.Text();
-			log.Println(ctx.Message().Payload, text)
+		kbot.Handle(telebot.OnText, func(m telebot.Context) error {
+		    var text = m.Text();
+			log.Println(m.Message().Payload, text)
 
 			switch strings.ToLower(text) {
-			    case "hello":
-                    ctx.Send("Hello, how can I help you?")
-                case "bye":
-                    ctx.Send("Bye! Have a great day!")
+			    case "/start":
+                    m.Send("Welcome to Kbot! How can I assist you today?")
+			    case "/greet":
+                    m.Send("Hello, how can I help you?")
+                case "/finish":
+                    m.Send("Bye! Have a great day!")
                 default:
-                    ctx.Send("Sorry, I don't understand that command.")
+                    m.Send("Sorry, I don't understand that command.")
             }
 
 			return err
