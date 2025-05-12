@@ -53,8 +53,10 @@ to quickly create a Cobra application.`,
 			switch strings.ToLower(text) {
 			    case "hello":
                     ctx.Send("Hello, how can I help you?")
+                case "bye":
+                    ctx.Send("Bye! Have a great day!")
                 default:
-                    ctx.Send("I don't understand that command.")
+                    ctx.Send("Sorry, I don't understand that command.")
             }
 
 			return err
